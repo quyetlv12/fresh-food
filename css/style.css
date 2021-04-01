@@ -117,8 +117,7 @@ li {
 .products .container .heading {
   display: flex;
   justify-content: space-between;
-  height: 70px;
-  line-height: 70px;
+  margin-top: 20px;
 }
 
 .products .container .heading p {
