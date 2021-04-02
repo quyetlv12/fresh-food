@@ -53,8 +53,11 @@ li {
 
 .header {
   background: #80b435;
-  height: 100px;
-  line-height: 100px;
+  height: 70px;
+  line-height: 70px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
 }
 
 .header .header__nav {
@@ -63,11 +66,12 @@ li {
 }
 
 .header .header__nav .logo {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .header .header__nav ul {
   display: flex;
+  animation: menu 2s;
 }
 
 .header .header__nav ul li {
@@ -79,8 +83,39 @@ li {
   font-size: 1rem;
 }
 
-.header .header__nav ul li:hover {
-  text-decoration: underline;
+.header .header__nav ul li a::after {
+  content: '';
+  height: 2px;
+  margin-top: -20px;
+  width: 0%;
+  display: block;
+  transform: 0.5s;
+  background: white;
+  transition: 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header .header__nav ul li a:hover::after {
+  content: '';
+  width: 100%;
+}
+
+.header .header__nav .btn-click-menu {
+  display: none;
+}
+
+@keyframes menu {
+  0% {
+    top: 30px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.header .header-nav-hidden {
+  display: none;
 }
 
 @media (max-width: 1024px) {
@@ -88,9 +123,57 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
   .header .header__nav ul {
     display: none;
+  }
+  .header .header__nav .btn-click-menu {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin: 20px 0 0 0;
+  }
+  .header .show-menu {
+    z-index: 99999;
+    width: 200px;
+    display: block;
+    height: 100%;
+    transition: 2s cubic-bezier(0.23, 1, 0.32, 1);
+    text-align: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: #80b435;
+    animation: show 2s;
+  }
+  .header .show-menu ul {
+    z-index: 9999;
+  }
+  .header .show-menu ul li a {
+    color: #fff;
+  }
+  @keyframes show {
+    0% {
+      transition: 2;
+      margin-left: 2px;
+    }
+    25% {
+      transition: 2;
+      margin-left: 7px;
+    }
+    75% {
+      transition: 2;
+      margin-left: 9px;
+    }
+    100% {
+      transition: 2;
+      margin-left: 200px;
+    }
+  }
+  .header .hidden-menu {
+    display: none;
+    transition: 2s cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
 
@@ -147,12 +230,11 @@ li {
   cursor: pointer;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   opacity: 0.7;
-  padding: 50px;
 }
 
 .products .container .card-products .card .card-image img:hover {
+  transition: 2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   opacity: 1;
-  transform: scale(1.1);
 }
 
 .products .container .card-products .card .card-body {
