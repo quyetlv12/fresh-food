@@ -154,6 +154,7 @@ li {
       right: 0;
       top: 0;
       background: #80b435;
+      opacity: 0.9;
       animation: show 2s;
       ul{
         z-index: 9999;
@@ -199,7 +200,7 @@ li {
 //banner
 
 .banner {
-  background-image: url("../../public/Bg.png");
+  background-image: url("../images/Bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 300px;
