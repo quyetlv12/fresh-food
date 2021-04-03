@@ -168,6 +168,7 @@ li {
     z-index: 99999;
     width: 200px;
     display: block;
+    position: relative;
     height: 100%;
     transition: 2s cubic-bezier(0.23, 1, 0.32, 1);
     text-align: center;
@@ -179,9 +180,23 @@ li {
     animation: show 2s;
   }
   .header .show-menu ul {
+    margin-top: 50px;
     z-index: 9999;
   }
   .header .show-menu ul li a {
+    color: #fff;
+  }
+  .header .show-menu #btn-remove-menu {
+    background: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 50px;
+    border: none;
+  }
+  .header .show-menu #btn-remove-menu i {
+    font-size: 1.5rem;
     color: #fff;
   }
   @keyframes show {
@@ -249,7 +264,7 @@ li {
   max-width: 25%;
   padding: 0 4px;
   text-align: center;
-  border: 0.5px solid #979797;
+  border: 0.02px solid #979797;
 }
 
 .products .container .card-products .card .card-image {
