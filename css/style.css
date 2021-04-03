@@ -124,6 +124,15 @@ li {
   display: none;
 }
 
+.header .header__nav .btn-click-menu .btn-toggle-menu {
+  border: none;
+  background: none;
+}
+
+.header .header__nav .btn-click-menu .btn-toggle-menu i {
+  color: #fff;
+}
+
 @keyframes menu {
   0% {
     top: 30px;

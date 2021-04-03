@@ -111,6 +111,13 @@ li {
     }
     .btn-click-menu{
       display: none;
+      .btn-toggle-menu{
+        border: none;
+        background: none;
+        i{
+          color: #fff;
+        }
+      }
     }
   }
   @keyframes menu {
